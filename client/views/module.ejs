@@ -9,7 +9,8 @@
 </head>
 <body>
     <header class="top-bar">
-        <div class="logo">Your Logo</div>
+        <div class="logo"><img src="/images/logo.jpeg" alt="Logo"></div>
+        <h2 style="color:#363636">Law Explorer</h2>
         <div class="user-options">
             <button class="account-button">Account</button>
             <button class="contact-button">Contact</button>
@@ -20,18 +21,18 @@
     <main>
         <nav class="left-menu">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="/dashboard">Home</a></li>
                 <li><a href="#">Community</a></li>
                 <li><a href="#">Connect</a></li>
             </ul>
             <div class="logout">
-                <a href="#">Logout</a>
+                <a href="/logout">Logout</a>
             </div>
         </nav> 
         <div class="content">
             <ul>
-                <% moduleData.laws.forEach((moduleItem) => { %>
-                    <li><%= moduleItem.name %></li>
+                <% moduleData.laws.forEach((moduleItem, i) => { %>
+                    <li><a href="/dashboard/modules/3/<%= i+1 %>"><%= moduleItem.name %></a></li>
                 <% }); %>
             </ul>
         </div>

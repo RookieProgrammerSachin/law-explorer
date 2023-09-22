@@ -3,6 +3,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+}
+
+h1 {
+  text-align: center;
 }
 
 .register-container {
@@ -10,6 +15,8 @@ main {
     flex-direction: column;
     padding: 1rem;
     border-radius: 10px;
+    width: 24rem;
+    border: 1px solid silver
 }
 
 form {
@@ -21,7 +28,7 @@ form {
 .input-container {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.3rem;
 }
 
 .input-container input {

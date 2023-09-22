@@ -49,3 +49,7 @@ export const registerAuthController = async (req, res) => {
       res.render("register", { status: "Error saving data, try again" })
     });  
 }
+
+export const logoutAuthController = async (req, res) => {
+  return res.clearCookie("actk").redirect("/");
+}

@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="top-bar">
-        <div class="logo">Your Logo</div>
+        <div class="logo"><img src="/images/logo.jpeg" alt="Logo"></div>
         <div class="user-options">
             <button class="account-button">Account</button>
             <button class="contact-button">Contact</button>
@@ -20,28 +20,75 @@
     <main>
         <nav class="left-menu">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="/dashboard">Home</a></li>
                 <li><a href="#">Community</a></li>
                 <li><a href="#">Connect</a></li>
             </ul>
             <div class="logout">
-                <a href="#">Logout</a>
+                <a href="/logout">Logout</a>
             </div>
-        </nav> 
+        </nav>
         <div class="content">
-            <h1>Scenario Video</h1>
-            <video controls>
-                <source src="<%= lawData.scenarioVideo %>" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <button class="button-82-pushable" type="submit" role="button">
-                <span class="button-82-shadow"></span>
-                <span class="button-82-edge"></span>
-                <span class="button-82-front text">
-                  Skip explanation
-                </span>
-            </button>
+            <div class="quiz-prep">
+                <h1>Scenario Video</h1>
+                <video controls>
+                    <source src="<%= lawData.scenarioVideo %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button onclick="toggleQuiz(event)" class="button-82-pushable" type="submit" role="button">
+                    <span class="button-82-shadow"></span>
+                    <span class="button-82-edge"></span>
+                    <span class="button-82-front text">
+                      Begin quiz!
+                    </span>
+                </button>
+            </div>
+            <div class="quiz-video-container">
+                <button onclick="toggleQuiz(event)" class="button-82-pushable button-width" type="submit" role="button">
+                    <span class="button-82-shadow"></span>
+                    <span class="button-82-edge red-button-edge"></span>
+                    <span class="button-82-front red-button-front text">
+                        ← Watch again
+                    </span>
+                </button>
+                <h1>Based on the previous video, similar video plays out</h1>
+                <video controls>
+                    <source src="<%= lawData.questionVideo %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button onclick="openGame(event)" class="button-82-pushable" type="submit" role="button">
+                    <span class="button-82-shadow"></span>
+                    <span class="button-82-edge"></span>
+                    <span class="button-82-front text">
+                        I'm ready!
+                    </span>
+                </button>
+            </div>
+            <div class="quiz-game-container">
+                <h1>Quiz</h1>
+                <div class="quiz-game-question-container">
+                    <h2>The question</h2>
+                    <div class="quiz-options">
+                        <% Object.keys(questionData.answers).forEach((data, i) => { %>
+                            <button onclick="selectOption(event, <%- questionData.answers[i+1].isAnswer %>, <%= (i+1) %>, '<%- lawData.choicesVideos[i+1] %>', '<%= questionData.answers[i+1].option %>')" class="button-82-pushable" type="submit" role="button">
+                                <span class="button-82-shadow"></span>
+                                <span class="button-82-edge"></span>
+                                <span class="button-82-front text">
+                                    <%= questionData.answers[i+1].option %>
+                                </span>
+                            </button>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz-option">
+                <video controls>
+                    <source src="" class="quiz-wrong" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
     </main>
+    <script src="/js/law-quiz.js"></script>
 </body>
 </html>

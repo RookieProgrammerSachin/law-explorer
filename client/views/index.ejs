@@ -3,9 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi page</title>
+    <title>Law Explorer</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/globals.css">
 </head>
 <body>
-    HOMEPAGE
+    <!--navbar Section-->
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="#home" id="navbar_logo">
+                <img src="/images/logo.jpeg" alt="law explorer">
+            </a>
+            <div class="navbar_toggle" id="mobile_menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="#home" class="navbar_links" onclick="mobileMenu()" id="home-page">Home</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#about" class="navbar_links" onclick="mobileMenu()" id="about-page">About</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#features" class="navbar_links" onclick="mobileMenu()" id="features-page">Features</a>
+                </li>
+                <li class="navbar_btn">
+                    <a href="/login" class="button" onclick="mobileMenu()">Sign in</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Hero section-->
+    <div class="main" id="home">
+        <div class="main_container">
+            <div class="main__content">
+                <h1>Welcome to</h1>
+                <h2>Law Explorer</h2>
+                <p>Where fun meets education, and children's rights take center stage.</p>
+                <div class="main_btn">
+                    <button class="button-82-pushable" onclick="location.href='/login'" role="button">
+                        <span class="button-82-shadow"></span>
+                        <span class="button-82-edge"></span>
+                        <span class="button-82-front text">
+                          GET STARTED!
+                        </span>
+                      </button>
+                </div>
+            </div>
+            <div class="main_img-container">
+                <img src="/images/game.avif" alt="pic" id="main_img">
+            </div>
+        </div>
+    </div>
+
+    <!--About Section-->
+    <div class="about" id="about">
+        <div class="about_container">
+            <div class="about_img_container">
+                <img src="/images/abt-game.avif" alt="abt-image">
+            </div>
+            <div class="about_content">
+                <h1>What we do...</h1>
+                <p> We're on a captivating quest to educate, engage, and empower young minds, turning them into champions for child rights. Explore our world, play with purpose, and make a difference. <br> At law explorer, we believe in the potential of every child. Our mission is to create a world where children understand their rights, stand up for justice, and build a brighter future together. Join us on this journey of learning, empowerment, and change.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Features section-->
+    <div class="features" id="features">
+        <div class="features_container">
+            <h1>Features</h1>
+            <div class="feature_wrapper">
+                <div class="box">
+                    <h2>Interactive Gameplay with modules</h2>
+                    <p>The platform is organized into modules, each focusing on specific child rights
+                        laws and scenarios. Children progress as they demonstrate their understanding.
+                   </p>
+                </div>
+                <div class="box">
+                    <h2>Voiceover Narration</h2>
+                    <p>Each module begins with voiceover narration that introduces the scenario and relevant child
+                        rights law, setting the stage for challenges.               
+                   </p>
+                </div>
+                <div class="box">
+                    <h2>Scenario-based Challenges</h2>
+                    <p>Within each module, students face five different scenarios related to specific child
+                        rights laws. For each scenario, they must answer questions on how to apply the law and approach the situation.                 
+                   </p>
+                </div>
+                <div class="box">
+                    <h2>Consequence of Wrong Choices</h2>
+                    <p>Immediate feedback is provided after each question, indicating whether the answer is
+                        correct or incorrect. Wrong choices trigger short video clips showing the consequences.                  
+                   </p>
+                </div>
+                <div class="box">
+                    <h2>Justice Scenes</h2>
+                    <p>After successfully completing a module, students are presented with five different justice scenes.
+                        For each scene, a question related to the scenario is posed, testing their understanding of the law in action.                   
+                   </p>
+                </div>
+                <div class="box">
+                    <h2>Extensive community</h2>
+                    <p> Social and community features enable children to connect and collaborate with other users, legal experts, and organizations, creating a sense of community and empowerment and integration with child rights organizations and support services, enabling children to access legal advice and assistance as needed.
+                   </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Get started-->
+    <div class="get-started">
+        <h1>What are you waiting for?</h1>
+        <button onclick="location.href='/login'" class="button-82-pushable" role="button">
+            <span class="button-82-shadow"></span>
+            <span class="button-82-edge"></span>
+            <span class="button-82-front text">
+              PLAY NOW
+            </span>
+          </button>
+    </div>
+    <script src="/js/landing.js"></script>
 </body>
 </html>
